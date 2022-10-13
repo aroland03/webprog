@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Számkitalálós játék</h1>
+    <p>Gondoltam egy számra 1 és 100 között. Találd ki!</p>
+    <input id="tipp" type="number">
+    <button id="tippGomb">Tipp!</button>
+    <ul id="tippek">
+
+    </ul>
+
+    <script>
+        // Segédfüggvény
+        function veletlen(a, b)
+        {
+            return Math.floor(Math.random() * (b - a + 1)) + a
+        }
+
+        // Állapottér
+        let kitalalandoSzam = veletlen(1, 100)
+        let tippek = []
+        let vege = false
+
+        function tippel(tippeltSzam)
+        {
+            tippek.push(tippeltSzam)
+            vege = tippeltSzam === kitalalandoSzam
+        }
+        
+        // Eseménykezelő függvények
+        const input = document.querySelector('#tipp')
+        const gomb = document.querySelector('#tippGomb')
+        const ul = document.querySelector('#tippek')
+
+        gomb.addEventListener('click', tippeles)
+        function tippeles(e)
+        {
+            // beolvasás
+            const szam = input.valueAsNumber
+            // feldolgozás
+            tippel(szam)
+            // kiírás
+            // imperatív megoldás
+            // const li = `<li>${szam}</li>`
+            // ul.innerHTML += li
+
+            // deklaratív
+            ul.innerHTML = genLista()
+
+            // imperativ
+            input.disabled = vege
+            gomb.disabled = vege
+        }
+
+        // HTML generálók
+        function genLista()
+        {
+            return tippek.map(szam => `<li>${szam} (${hasonlit(szam)})</li>`).join('')
+        }
+
+        function hasonlit(szam)
+        {
+            if(szam < kitalalandoSzam) return 'nagyobb'
+            if(szam > kitalalandoSzam) return 'kisebb'
+            return 'egyenlo'
+        }
+    </script>
+</body>
+</html>
