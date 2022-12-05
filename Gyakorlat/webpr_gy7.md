@@ -1,0 +1,31 @@
+# AJAX
+
+## AJAX szolgáltatások
+Az alábbi feladatokhoz nyílt API-kat a következő helyen találni:
+
+[Nyílt API-k listája](https://github.com/public-apis/public-apis)
+[RapidAPI](https://rapidapi.com/)
+A legtöbb API akkor használható, ha regisztrálunk rá. Érdemes olyanokat keresni, amelyekhez vagy nem szükséges ez, vagy csak egy apiKey szükséges. A RapidAPI oldalán nagyon vigyázni kell, mert a Freemium szolgáltatásoknál a limit túllépése után már fizetni kell érte. Erről ír a dokumentációban is. Érdemes vagy Free vagy olyan Freemium szolgáltatást igénybe venni, ahol Hard limit van beállítva.
+
+Egy másik lehetőség, hogy lementjük az API-k válaszait fájlokba az egyes végpontokhoz, és azokat olvassuk fel az AJAX hívásoknál. Így a tesztelés is könnyebb lehet.
+
+Az AJAX kéréseket `XMLHttpRequest`-tel vagy `fetch` API-val is elvégezheted!
+
+## Feladatok
+1. Készíts egy olyan weboldalt, amelynek meg lehet adni egy címet, és megmondja az adott hely aktuális időjárását, pár napos előrejelzését, vagy akár historikus adatokat is. Ehhez a feladathoz kétféle szolgáltatást kell igénybe vennünk:
+    - Mivel az időjárás API földrajzi pozíció megadásával működik, először meg kellene határoznunk, hogy az adott cím hol található. Ehhez a [Nominatim](https://nominatim.org/release-docs/develop/api/Overview/) szolgáltatását fogjuk igénybe venni, ami regisztrálás nélkül elérhető és használható.
+    - Az időjárási adatokhoz például az [OpenWeatherMaps](https://openweathermap.org/api/one-call-api) szolgáltatása használható. Ehhez már [regisztrálni kell](https://openweathermap.org/price#weather), és a kapott kulccsal meghívni a végpontokat.
+ Lépések:
+    - a. Ismerd meg az API-kat! Ahol kell, szerezz API kulcsot! Csinálj néhány próbahívást, és mentsd is le őket fájlokba! Később ezeket a fájlokat használhatod a fejlesztéshez.
+    - b. Földrajzi pozíció megszerzése. Tegyél fel az oldalra egy szöveges beviteli mezőt, amibe a felhasználó be tud írni egy címet, majd egy gomb megnyomásával le tudja kérdezni a földrajzi koordinátákat. Ez utóbbiakat írd bele két szerkeszthető szöveges beviteli mezőbe!
+    - c. Időjárás információk megjelenítése. A földrajzi szélesség és hosszúság adatokat a neki megfelelő két szöveges beviteli mezőbe írd bele (vagy az előző lépés automatikusan kitölti). Egy gomb megnyomására kérjük le az időjárás adatokat, és strukturáltan jelenítsük meg őket. Ebben az API-ban van aktuális időjárás, órás, napi előrejelzés, stb., [ld. a leírást](https://openweathermap.org/api/one-call-api). A válaszban [ikonok megjelenítésére](https://openweathermap.org/weather-conditions#How-to-get-icon-URL) is van lehetőség, tegyük is meg!
+    - d. Végül oldjuk meg azt, hogy a cím megadására a földrajzi koordináták megkeresése után az időjárás előrejelzés is automatikusan meghívódik!
+2. Készíts egy zenei lejátszási listákat kezelő kis alkalmazást. Legyen lehetőség lejátszási listát létrehozni, és a lejátszási listákhoz zeneszámokat hozzáadni. A hozzáadást segítsük a [Last.fm szolgáltatás API-jával](https://www.last.fm/api). Itt lehet zeneszámokat keresni (`track.search)`, egy adott zeneszámhoz hasonló zeneszámokat lekérdezni, előadókat keresni, stb. Lépések:
+    - a. Ismerd meg az API-t! Regisztrálj, szerezz API kulcsot! Csinálj néhány próbahívást, és mentsd is le őket fájlokba! Később ezeket a fájlokat használhatod a fejlesztéshez.
+    - b. Vegyél fel néhány beégetett lejátszási listát. Ezekhez fogjuk a keresési eredményeinket hozzáadni.
+    - c. Legyen keresőfelület, ahol zeneszámokat lehet keresni. Írjunk be egy címet, és egy gomb megnyomására jelenítsünk meg egy találati listát a zeneszámokkal. Minden zeneszámnál legyenek a következő lehetőségek:
+        - Legördülő lista + Hozzáad gomb. A lista a lejátszási listákat tartalmazza. A kiválasztott listához hozzáadja a zeneszámot.
+        - Hasonló zeneszámok. Erre kattintva a lista helyére a hasonló zeneszámok listája kerül, ugyanilyen módon megjelenítve.
+        - Toptracks: az előadóhoz tartozó top track-ek listája. Ez is az adott lista helyett jelenik meg. (artist.getTopTracks)
+    - d. Jelenítsük meg a lejátszási listákat! Egy lejátszási listára kattintva jelenítsük meg a hozzá tartozó zeneszámokat! Legyen lehetőség a zeneszámokat törölni vagy másik listába áthelyezni!
+3. Készíts egy szógyakoroltató alkalmazást. Legyenek benne szólisták, amikhez tetszőleges számú szó vehető fel. Minden szónál megvan a magyar és angol megfelelője. Egy szólistát lehessen gyakorolni, ahol az adott szavakhoz meg kell adni a megfelelőjüket (magyar–>angol, angol–>magyar). AJAX-os kérést a szólisták megadásához, szerkesztéséhez használjunk. Amikor felveszünk pl. magyar szavakat, akkor egy API segítségével automatikusan fordítsuk le őket, így meggyorsítva a szavak bevitelét. Használjuk ehhez a RapidAPI-n keresztül elérhető hardlimites [Microsoft Translator Text API](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/microsoft-translator-text/endpoints)-t.

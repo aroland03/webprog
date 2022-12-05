@@ -1,0 +1,122 @@
+# 10. Gyakorlat
+
+## Feladatok
+1. Egy Excel állományt CSV formátumban mentettünk el. Jelenítsük meg az állományt táblázatként PHP segítségével!
+2. A családi kiadásokat egy Excel táblázatban tartjuk nyilván. Minden kiadásról tároljuk az összegét, a dátumát, a kifizetés helyét és kategóriáját (Élelmiszer, Iskola, stb.). Az állományt CSV formátumban mentjük ki.
+    - a. Készíts olyan oldalt, ahol lehetőség van két tetszőleges dátum közti időszak kiadásait kilistázni, és a lista alatt összesíteni az időszaki kiadásokat! Piros színnel jelöljük a legnagyobb kiadást!
+    - b. Készíts olyan oldalt, ahol egy legördülő mezőbe kigyűjtjük az eddig használt kategóriákat, és ezek közül választva csak azokat a kiadásokat jelenítjük meg, amelyek az adott kategóriába tartoznak. A lista alatt jelenjen meg az összesítés!
+    - c. Tedd elérhetővé havi bontásban a kiadásokat. Sorold fel a hónapokat, és azokra kattintva jelenjenek meg a konkrét kiadások, alattuk az összegző sorral!
+    - d. Készíts egy táblázatot, amelyben feltüntetjük, hogy havonta mennyit költöttünk!
+3. Az előző feladatot módosítsuk a következőképpen.
+    - a. Az adatokat ne CSV formátumban tároljuk, hanem JSON állományként. Határozzuk meg az ehhez tartozó PHP adatszerkezetet mint belső ábrázolást.
+    - b. A fenti listák mellett legyen lehetőség egy új kiadás rögzítésére űrlapon.
+    - c. Legyen lehetőség egy adott tétel módosítására és törlésére.
+4. Egy konfigurációs állomány összetartozó név-érték párosokat tárol kategóriákba sorolva. A kategóriát [] zárójelben adják meg (pl. [Kategória1]), a név-érték párosok pedig név=érték formátumban szerepelnek a fájlban. Az egyes kategóriákhoz tartozó beállításokat üres sorok választják el.
+    - a. Készíts PHP-s függvényt, amely beolvas egy ilyen konfigurációs állományt a megfelelő adatszerkezetbe!
+    - b. A konfigurációt tartalmazó adatszerkezetet írjuk ki fájlba a fent meghatározott formátumban!
+5. Egy kérdőív válaszait fájlban tároljuk.
+    - a. Készíts egy kérdőívet pár kérdéssel, a felküldött adatokat pedig tárold el fájlban!
+    - b. Készíts egy olyan oldalt, amely a válaszokat táblázatos formában megjeleníti!
+6. Készíts egy minimális funkciókkal ellátott webshopot.
+    - a. A termékeket kategóriákba soroljuk, és JSON formátumban tároljuk. Készítsd el ezt a fájlt!
+    - b. Készíts egy olyan oldalt, ahol egy listában felsoroljuk a kategóriákat!
+    - c. A kategóriákra kattintva egy másik oldalon jelenjenek meg az adott kategóriába tartozó termékek mellettük egy-egy jelölőmezővel. Legyen lehetőség ezen az oldalon nevet és címet megadni.
+    - d. Ezeket az adatokat elküldve mentsük ki egy fájlban őket!
+    - e. Készíts egy olyan oldalt, ahol a megrendelések táblázat formájában jelennek meg!
+7. Felhasználói felület nélkül gyakorold az adatokkal való dolgozást és az adattárolást! Használd ehhez az előadáson kapott segédosztályokat! Végezd el a következő feladatokat!
+    - a. Hozz létre egy JSON fájlt, írj bele adatokat, majd olvasd be!
+        - Írd ki az összes beolvasott adatot!
+        - Keress meg egy adatot azonosító szerint, és írd ki!
+        - Keress meg egy adatot valamilyen egyéb mező szerint, és írd ki!
+        - Adott tulajdonságú mezőkkel rendelkező adatok kiírása!
+        - Keress az adatok valamelyik szöveges mezőjében úgy, hogy a mezőnek tartalmaznia kell egy értéket! Az így kapott rekordokat írd ki!
+    - b. Hozz létre egy olyan JSON fájlt, ami egy üres gyűjteményt tartalmaz: {}! Írj kódot, ami
+        - felvesz ebbe a gyűjteménybe új elemeket egyesével;
+        - kikeres egy elemet és módosítja;
+        - töröl egy elemet azonosító szerint;
+        - több elemet módosít egyszerre valamilyen feltétel szerint;
+        - több elemet töröl valamilyen feltétel szerint!
+8. Készíts egy névjegyzékeket kezelő alkalmazást. Egy névjegy a következő adatokat tartalmazza:
+    - Név: kötelező.
+    - Email: az email címből több is lehet, ezért oldd meg általánosan (azaz mindegy, hogy 1, 2 vagy több mező van); formai ellenőrzés kell; legalább 1 email cím megadása kötelező!
+    - Telefon: nem kötelező, de ha meg van adva, akkor formai ellenőrzés kell; többféleképpen is megadható a felületen.
+    - Lakcím: nem kötelező
+    - Megjegyzés: nem kötelező
+    - Nem: kötelező
+
+    Az alábbi feladatok megoldása szükséges:
+    - a. Új névjegyet felvétele Készíts egy olyan oldalt, ahol egy új névjegyet lehet felvenni a fenti szabályok szerint.
+        - i. Először készítsd el az űrlapot!
+        - ii. Végezd el PHP oldalon a hibaellenőrzést. A hibákat az űrlapmezők mellett jelenítsd meg! Ehhez a részhez használhatod az űrlapfeldolgozás általános sablonját, ahol a validate függvényt kell csak kifejtened:
+            ```php
+            // functions
+            function validate($post, &$data, &$errors) {
+                $data = $post;
+                // Ellenőrzés
+                // ...
+                return count($errors) === 0;
+            }
+            // main
+            $data = [];
+            $errors = [];
+            if (count($_POST) > 0) {
+                if (validate($_POST, $data, $errors)) {
+                    // Beolvasás: $data
+                    // ...
+                    // Feldolgozás
+                    // ...
+                }
+            }
+            ```
+        - iii. Gondoskodj az űrlapmezők állapottartásáról!
+        - iv. Ha nincs hiba a felküldött adatokban, akkor mentsd el az adatokat! Ehhez használd a Storage osztályt, illetve akár ennek bővített változatát. Sikeres mentés esetén irányítsd át a böngészőt a listázó oldalra!
+            ```php
+            include('storage.php');
+
+            class CardStorage extends Storage {
+                public function __construct() {
+                    parent::__construct(new JsonIO('cards.json'));
+                }
+            }
+
+            $card_storage = new CardStorage();
+            ```
+    - b. Névjegyek listázása Listázd ki az összes tárolt névjegyet táblázatos formában. Jelenítsd meg a név, email és telefon mezőket. Ha email több is van, akkor azokat vesszővel elválasztva sorold fel!
+    - c. Névjegyek módosítása
+        - i. A listázó oldalon készíts a névből egy linket, amire kattintva a módosító oldalra jutunk. Az URL-ben add át a módosítandó elem azonosítóját, pl. modify.php?id=asdf.
+        - ii. Olvasd be az azonosítót, majd olvasd be az adott azonosítójú névjegyet! Jelenítsd meg őket az űrlapon!
+        - iii. Az űrlap elküldésekor ellenőrizd az adatokat, jelenítsd meg a hibaüzeneteket, és gondoskodj az űrlap állapottartásáról. Ez utóbbinál ne feledd, hogy a felküldött adatot kell megjeleníteni, ennek hiányában pedig a beolvasott névjegy adatait! Nyugodtan másolj át kódokat a névjegy létrehozásához használt oldal kódjából: űrlap, ellenőrzés, hibakiírás, állapotmegőrzés.
+        - iv. Ha nincs hiba az ellenőrzés során, akkor módosítsd az adott azonosítóhoz tartozó adatokat, majd irányítsd át a böngészőt a listázó oldalra!
+    - d. Névjegyek törlése A névjegy módosítása oldalon legyen egy másik gomb a módosítás mellett, amellyel az adott névjegyet törölni lehet. Ez küldjön egy POST üzenetet egy végpontra, amelyen belül az adott azonosítójú elemet töröljük, majd visszairányítjuk a böngészőt a listázó oldalra! Ha a gomb a módosító űrlapon belül van, akkor a ugyanazon PHP szkripten belül kell eldönteni, melyik gombot nyomták meg. Ehhez felhasználható a gomb name attribútuma.
+        ```php
+        <?php
+        if (isset($_POST['modify'])) {
+            // Modify
+        }
+        if (isset($_POST['delete'])) {
+            // Delete
+        }
+        ?>
+        <form action="" method="post">
+            <button name="modify" type="submit">Modify</button>
+            <button name="delete" type="submit">Delete</button>
+        </form>
+        Ha külön űrlapon vannak, akkor külön végpont rendelhető hozzájuk:
+        <form action="modify.php?id=asdf" method="post">
+            <button type="submit">Modify</button>
+        </form>
+        <form action="delete.php?id=asdf" method="post">
+            <button type="submit">Delete</button>
+        </form>
+        ```
+    - e. Szűrés A listázó oldalon legyen lehetőség szűrni a névjegyek között szöveg szerint.
+        - i. Tegyél fel egy szűrőmezőt egy űrlapban a lista fölé:
+            ```php
+            <form action="" method="get">
+                Filter tetx: <input type="text" name="filter">
+                <button type="submit">Szűr</button>
+            </form>
+            ```
+        - ii. Ha érkezik szűrőérték, akkor válogasd le azokat a névjegyeket, amelyek neve tartalmazza az adott értéket, és csak azokat jelenítsd meg!
+        - iii. Ha nem érkezik, akkor az összes jelenjen meg!
+        - iv. A szűrést egészítsd ki azzal, hogy a megjegyzés mezőben is keresel!

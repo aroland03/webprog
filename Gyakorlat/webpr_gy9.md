@@ -1,0 +1,31 @@
+# 9. Gyakorlat 
+
+## Feladatok
+1. Készíts olyan oldalt (pl. Hello világ!), amely csak elte.hu domainből érhető el (az IP cím 157.181-gyel kezdődik). Máshonnan érkező látogatóknak a "Nincs hozzáférés" szöveg jelenjen meg! A megfelelő információt keresd a környezeti változók között!
+2. Készíts olyan oldalt, amelynek paraméterül adva egy nevet, azt üdvözli (Hello név!)!
+    - a) A nevet URL-ben adjuk meg!
+    - b) A nevet űrlapon keresztül adjuk meg!
+3. Készíts olyan oldalt, amelynek háttérszínét paraméterként lehet megadni.
+    - a) A színkódot URL-ben add meg!
+    - b) Készíts három hivatkozást kék, sárga, piros felirattal, amelyekre kattintva az oldal háttérszíne megfelelően változik!
+    - c) A színkódot űrlap segítségével adjuk meg!
+4. Készíts elsőfokú egyenletet (ax+b=0) megoldó oldalt! Űrlapon keresztül lehessen megadni a és b értékét. Hiba esetén az űrlap felett listában jelenjenek meg a hibaüzenetek! A megoldást az űrlap alá írjuk! Gondoskodj az űrlap állapottartásáról!
+5. Egy munkáltató nyilvántartást vezet dolgozóinak nevéről, beosztásáról, fizetéséről.
+    - a) Táblázatként jelenítsd meg a nyilvántartást!
+    - b) Egy szöveges beviteli mező segítségével tedd lehetővé, hogy a táblázatban csak azok a nevek szerepeljenek, amelyek tartalmazzák a mező értékét (szűrés részszövegre).
+    - c) A listában jelöld a legnagyobb fizetéssel rendelkező személyt narancssárga háttérszínnel!
+    - d) Tedd lehetővé a lista szűrését beosztás szerint is. Ezt egy legördülő lista segítségével lehessen megadni, amelybe a lista alapján kerülnek be a különböző beosztások.
+    - e) A nevekre kattintva jelenjen meg egy olyan oldal, ahol csak az adott illető adatai jelennek meg.
+6. Készíts PHP szkriptet, amely az URL-ben paraméterként megadott PHP állományt tölti be. (Pl. ha paraméter értéke 'alma', akkor az 'alma.php' kerül betöltésre.) Az oldalak betöltéséhez az include() utasítást használjuk!
+7. Készíts egy olyan űrlapot, amelyen egy névjegyzék új elemét lehet felvenni. Egy új névjegyhez meg kell adni a nevet, az email címeket és a telefonszámot. Ha hiba van, akkor jelezd az űrlapmező mellett! Siker esetén írd ki a felküldött adatokat rendezett formában!
+    - A név kötelező.
+    - Az email címből több is lehet, ezért oldd meg általánosan (azaz mindegy, hogy 1, 2 vagy több mező van)!
+    - A telefonszámot is többféleképpen megadhatod, pl. egyszerű szöveges mezőként, de akkor reguláris kifejezéssel ellenőrizd; vagy körzetválasztó + telefonszám kettőssel.
+8. Új oltásra szeretnénk jelentkezni. Ehhez meg kell adni:
+nevünket (kötelező, két szóból áll)
+    - TAJ számunkat (kötelező, 9 hosszú, csak számokból áll, opcionálisan hármas tagolásban szóközökkel elválasztva)
+    - utolsó oltás időpontját (kötelező, dátum, 4 hónapnál korábbinak kell lennie)
+    - oltás típusát (legördülő, kötelező)
+    - hozzájárulunk-e az adatok tárolásához (kötelező, jelölőmező).
+
+    A hibaüzeneteket a mezők mellett írjuk ki. Gondoskodjunk az űrlap állapottartásáról. Ha minden rendben van, adjunk visszaigazoló üzenetet.

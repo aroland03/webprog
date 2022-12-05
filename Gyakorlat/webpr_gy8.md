@@ -1,0 +1,22 @@
+# 8. Gyakorlat - PHP alapok
+
+## Feladatok
+1. Egy valid HTML sablonban végezzük el az alábbi feladatokat PHP segítségével.
+    - a. Írd ki címsorként: `"Hello világ!"`
+    - b. Vegyél fel egy változót, amiben a nevedet tárolod. A változó felhasználásával üdvözöld magad. (`"Hello név!"`)
+2. Írjuk ki az aktuális időt az oldalra! A megoldáshoz használd a PHP `date()` függvényét (ld. PHP referencia)!
+3. Írjuk ki egy tetszőleges, beégetett szám faktoriálisát! A faktoriális kiszámításának kódját helyezzük függvénybe!
+4. Írd ki a `"Hello világ!"` szöveget 10-szer folyamatosan növekedő méretben!
+5. Adott egy hibaüzeneteket tartalmazó tömb. Jelenítsük meg a hibalistát felsorolásként!
+6. Egy filmeket listázó oldalon szeretnénk legördülő mezőből kiválasztani a film kategóriáját. A háttérrendszernek azonban a kategória azonosítójára van szüksége. Például: 5 - Akció, 4 - Dráma, 8 - Vígjáték. Találjuk ki az adatokat tároló adatszerkezetet, majd az alapján állítsuk elő az oldalon a legördülő mezőt!
+7. Adott áruknak a megnevezése és azonosítójuk (pl. 23 - pendrive, stb.). Jelenítsük meg az árukat jelölőmezőkként az oldalon!
+8. Egy tesztrendszerben minden tesztről tároljuk a kérdés szövegét és a megoldásokat, valamint azt, hogy melyik válasz a helyes.
+    - a. Generáld le a kérdéseket és a hozzájuk tartozó válaszokat tartalmazó űrlapot úgy, hogy minden kérdésnél csak egy válasz a helyes! A válaszok mellett a megfelelő űrlapelemet használd!
+    - b. Az előző feladathoz képest most egy kérdésnél több válasz is helyes lehet. Generáld le az ennek megfelelő űrlapot!
+9. Egy hallgatói nyilvántartásban minden hallgatóról tároljuk a nevét, a neptun azonosítóját, a születési évét és nemét. A kiszámításos feladatok számításait külön függvényekben oldjuk meg!
+    - a. Táblázat formájában jelenítsük meg a hallgatói nyilvántartást!
+    - b. Írjuk ki a legidősebb hallgatót!
+    - c. Ha 1970 előtt született a legidősebb hallgató, akkor írjuk ki mellé, hogy "az egész életen át tartó tanulás példaképe".
+    - d. Döntsük el a nyilvántartás alapján, van-e lány a hallgatók között!
+    - e. Két csík formájában tüntessük fel a fiúk és lányok darabszámát!
+10. Generálj egy véletlen hexadecimális színkódot! Használd ehhez a random_int, dechex, str_pad függvényeket (ld. referencia)! Ha mindegyik generált érték nagyobb, mint 128, akkor állítsd be háttérszínként, különben a háttérszín értéke legyen #cccccc! Az oldalra írjuk ki a generált színt szövegként, és azt is írjuk ki, hogy használtuk-e a háttérszín beállításához vagy alapértelmezett háttérszín van-e!
