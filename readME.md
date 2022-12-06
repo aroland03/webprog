@@ -1,6 +1,6 @@
 # ELTE IK Webprogramozás
 
-Ez a repó az ELTE IK Webprogramozás (IP-18CWEBPROGEG) tárgyhoz tartozó anyagokat tartalmazza. Minden felhasznált anyag a tárgy honlapján nyilvánosan elérhető.
+Ez a repó az ELTE IK Webprogramozás (IP-18CWEBPROGEG) tárgyhoz tartozó anyagokat tartalmazza. A felhasznált anyagok, feladatsorok a [tárgy honlapján](http://webprogramozas.inf.elte.hu/) megtalálhatóak.
 
 ## Anyagok
 ### Előadás mappa
@@ -20,7 +20,7 @@ A tárgy előadásainak anyagai az **Előadás** mappában találhatóak. Az el�
 13. [Kódszervezés, Tervezési minták, Kitekintés](http://webprogramozas.inf.elte.hu/webprog/lectures/13/#/)
 
 ### Gyakorlati videók mappa
-Az előadáshoz tartozó gyakorlati videók kódjai, amik alap példákon keresztül dolgozzák fel az aktuális előadás anyagát.
+Az előadáshoz tartozó gyakorlati videók kódjai, amik alap példákon keresztül dolgozzák fel az aktuális előadás anyagát. A gyakorlati videók az adott gyakorlathoz tartozó egyik feladat megoldását tartalmazzák. A videók a tárgy [Canvas](https://canvas.elte.hu/) oldalán találhatóak.
 
 #### *Kliensoldal*
 1. VSCode ismertetése, vezérlési szerkezetek, tömbfüggvények
@@ -29,8 +29,11 @@ Az előadáshoz tartozó gyakorlati videók kódjai, amik alap példákon keresz
 4. Alkalmazásfejlesztés: számkitalálós játék
 
 #### *Szerveroldal*
-<ol start=8>
-<li>Környezet beállítása, PHP nyelvi elemek, kimenet generálása
-<li> Bemeneti adatok PHP-ban (háttérszín feladat), Űrlapfeldolgozás (esőfokú egyenlet)
-<li> Adattárolás segédosztályokkal, Mozifilmek - létrehozás, listázás, módosítás, törlés, Mozifilmek - kiegészítés
-<li>Háttérszín tárolása munkamenetben
+8. Környezet beállítása, PHP nyelvi elemek, kimenet generálása
+9.  Bemeneti adatok PHP-ban (háttérszín feladat), Űrlapfeldolgozás (esőfokú egyenlet)
+10. Adattárolás segédosztályokkal, Mozifilmek - létrehozás, listázás, módosítás, törlés, Mozifilmek - kiegészítés
+11. Háttérszín tárolása munkamenetbenű
+    
+### Gyakorlat mappa
+A tárgy gyakorlati feladatsorai a **Gyakorlat** mappában található. A gyakorlati feladatsorok a tárgy honlapján találhatóak.
+http://webprogramozas.inf.elte.hu/#!/subjects/webprog-pti/gyak/[ora]
