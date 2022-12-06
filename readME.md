@@ -4,7 +4,7 @@ Ez a repó az ELTE IK Webprogramozás (IP-18CWEBPROGEG) tárgyhoz tartozó anyag
 
 ## Anyagok
 ### Előadás mappa
-A tárgy előadásainak anyagai az **Előadás** mappában találhatóak. Az előadások anyagai a tárgy honlapján találhatóak.
+A tárgy előadásainak anyagai az **Előadás** mappában találhatóak. Az előadáson vetített diasorok a tárgy honlapján megtalálhatóak:
 1. [Követelmények, JavaScript nyelvi elemek](http://webprogramozas.inf.elte.hu/webprog/lectures/01/#/)
 2. [Felületi elemek programozása: A DOM](http://webprogramozas.inf.elte.hu/webprog/lectures/02/#/)
 3. [Interaktív programok készítése a böngészőben](http://webprogramozas.inf.elte.hu/webprog/lectures/03/#/)
